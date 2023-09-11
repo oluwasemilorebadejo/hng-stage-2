@@ -66,7 +66,7 @@ DATABASE= # MongoDB connection URL
 DATABASE_PASSWORD= # MongoDB cluster password
 ```
 
-Ensure that you replace `DATABASE_URL` with the correct MongoDB connection URL.
+Ensure that you replace `DATABASE` with the correct MongoDB connection URL.
 
 ## 5. Running the API <a name="running-the-api"></a>
 
