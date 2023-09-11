@@ -45,11 +45,11 @@ To install the API and its dependencies, follow these steps:
 
 1. Clone the repository:
 
-   `git clone <repository_url>`
+   `git clone https://github.com/oluwasemilorebadejo/hng-stage-2.git`
 
 2. Change to the project directory:
 
-   `cd <project_directory>`
+   `cd <hng-stage-2>`
 
 3. Install the Node.js dependencies:
 
@@ -89,19 +89,23 @@ This command will start the API in development mode if you set `NODE_ENV=develop
   }
   ```
 - **Response (Success):**
+
   ```json
   {
-  "status": "success",
-      "data": {
-          "person": {
-              "name": "John Doe",
-              "\_id": "64ff7262cd4777be531c6da9"
-          }
-      }
+    "status": "success",
+    "data": {
+      "person": {
+        "name": "John Doe",
+        "_id": "64ff7262cd4777be531c6da9"
+      }
+    }
   }
   ```
 
   ```
+
+  ```
+
 - **Response (Error):**
   - HTTP Status Code: 409 Conflict if a person with the same name already exists.
   - HTTP Status Code: 400 Bad Request if the request body isn't a string.
@@ -136,19 +140,23 @@ This command will start the API in development mode if you set `NODE_ENV=develop
   }
   ```
 - **Response (Success):**
+
   ```json
   {
-  "status": "success",
-      "data": {
-          "person": {
-              "\_id": "64ff7262cd4777be531c6da9",
-              "name": "Jo Doe"
-          }
-      }
+    "status": "success",
+    "data": {
+      "person": {
+        "_id": "64ff7262cd4777be531c6da9",
+        "name": "Jo Doe"
+      }
+    }
   }
   ```
 
   ```
+
+  ```
+
 - **Response (Error):**
   - HTTP Status Code: 404 Not Found if no person with the provided `id` exists.
   - HTTP Status Code: 400 Bad Request if the request body isn't a string.
