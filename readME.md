@@ -183,6 +183,7 @@ This command will start the API in development mode if you set `NODE_ENV=develop
 ```json
 POST /api
 Content-Type: application/json
+
 {
     "name": "John Doe"
 }
@@ -247,6 +248,7 @@ Content-Type: application/json
 ```json
 PATCH /api/id
 Content-Type: application/json
+
 {
 "name": "Jo Doe"
 }
