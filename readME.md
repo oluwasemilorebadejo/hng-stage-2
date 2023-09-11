@@ -9,22 +9,22 @@ The objective of this task is to build a simple REST API capable of performing C
 ## Table of Contents
 
 1. [Prerequisites](#prerequisites)
-2. [Set up Database ](https://chat.openai.com/#Set up Database )
-3. [Installation](https://chat.openai.com/#installation)
-4. [Configuration](https://chat.openai.com/#configuration)
-5. [Running the API](https://chat.openai.com/#running-the-api)
-6. [API Endpoints](https://chat.openai.com/#api-endpoints)
-   - [Create a Person](https://chat.openai.com/#create-a-person)
-   - [Get a Person](https://chat.openai.com/#get-a-person)
-   - [Update a Person](https://chat.openai.com/#update-a-person)
-   - [Delete a Person](https://chat.openai.com/#delete-a-person)
-7. [Sample Usage](https://chat.openai.com/c/b130a9bd-0946-42f1-ace6-6239a57f1894#sample-usage)
-   - [Create a Person](https://chat.openai.com/c/b130a9bd-0946-42f1-ace6-6239a57f1894#create-a-person-example)
-   - [Get a Person](https://chat.openai.com/c/b130a9bd-0946-42f1-ace6-6239a57f1894#get-a-person-example)
-   - [Update a Person](https://chat.openai.com/c/b130a9bd-0946-42f1-ace6-6239a57f1894#update-a-person-example)
-   - [Delete a Person](https://chat.openai.com/c/b130a9bd-0946-42f1-ace6-6239a57f1894#delete-a-person-example)
-8. [Limitations and Assumptions](https://chat.openai.com/c/b130a9bd-0946-42f1-ace6-6239a57f1894#limitations-and-assumptions)
-9. [Local Setup and Deployment](https://chat.openai.com/c/b130a9bd-0946-42f1-ace6-6239a57f1894#local-setup-and-deployment)
+2. [Set up Database ](#2-set-up-database)
+3. [Installation](#installation)
+4. [Configuration](#configuration)
+5. [Running the API](#running-the-api)
+6. [API Endpoints](#api-endpoints)
+   - [Create a Person](#create-a-person)
+   - [Get a Person](#get-a-person)
+   - [Update a Person](#update-a-person)
+   - [Delete a Person](#delete-a-person)
+7. [Sample Usage](#sample-usage)
+   - [Create a Person](#create-a-person-example)
+   - [Get a Person](#get-a-person-example)
+   - [Update a Person](#update-a-person-example)
+   - [Delete a Person](#delete-a-person-example)
+8. [Limitations and Assumptions](#limitations-and-assumptions)
+9. [Local Setup and Deployment](#local-setup-and-deployment)
 
 ---
 
@@ -89,8 +89,8 @@ This command will start the API in development mode if you set `NODE_ENV=develop
   }
   ```
 - **Response (Success):**
-      ```json
-      {
+  ```json
+  {
   "status": "success",
       "data": {
           "person": {
@@ -99,6 +99,8 @@ This command will start the API in development mode if you set `NODE_ENV=develop
           }
       }
   }
+  ```
+
   ```
 - **Response (Error):**
   - HTTP Status Code: 409 Conflict if a person with the same name already exists.
@@ -134,8 +136,8 @@ This command will start the API in development mode if you set `NODE_ENV=develop
   }
   ```
 - **Response (Success):**
-      ```json
-      {
+  ```json
+  {
   "status": "success",
       "data": {
           "person": {
@@ -144,6 +146,8 @@ This command will start the API in development mode if you set `NODE_ENV=develop
           }
       }
   }
+  ```
+
   ```
 - **Response (Error):**
   - HTTP Status Code: 404 Not Found if no person with the provided `id` exists.
@@ -154,9 +158,11 @@ This command will start the API in development mode if you set `NODE_ENV=develop
 - **Endpoint:** `/api/:id`
 - **HTTP Method:** `DELETE`
 - **Response (Success):**
+
   ```json
 
   ```
+
 - **Response (Error):**
   - HTTP Status Code: 404 Not Found if no person with the provided `id` exists.
 
