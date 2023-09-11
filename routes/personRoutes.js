@@ -1,9 +1,12 @@
 const express = require("express");
 const personController = require("../controllers/personController");
+const personValidationMiddleware = require("../validation/personValidator");
 
 const router = express.Router();
 
-router.route("/").post(personController.createPerson);
+router
+  .route("/")
+  .post(personValidationMiddleware, personController.createPerson);
 
 router
   .route("/:id")

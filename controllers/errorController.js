@@ -6,8 +6,13 @@ const handleCastErrorDB = (err) => {
   return new AppError(message, 400);
 };
 
+const handleValidationErrorJoi = (err) => {
+  const message = err.details[0].message;
+
+  return new AppError(message, 400);
+};
+
 const sendErrorDev = (err, req, res) =>
-  // API and SSRendered
   res.status(err.statusCode).json({
     status: err.status,
     error: err,
@@ -16,23 +21,20 @@ const sendErrorDev = (err, req, res) =>
   });
 
 const sendErrorProd = (err, req, res) => {
-  // (A) API
-  if (req.originalUrl.startsWith("/api")) {
-    // expected errors, send err to client
-    if (err.isOperational) {
-      return res.status(err.statusCode).json({
-        status: err.status,
-        message: err.message,
-      });
-    }
-    // programming errors, dont send details to client
-    console.error("ERROR", err);
-
-    return res.status(500).json({
-      status: "error",
-      message: "something went wrong",
+  // expected errors, send err to client
+  if (err.isOperational) {
+    return res.status(err.statusCode).json({
+      status: err.status,
+      message: err.message,
     });
   }
+  // programming errors, dont send details to client
+  console.error("ERROR", err);
+
+  return res.status(500).json({
+    status: "error",
+    message: "something went wrong",
+  });
 };
 
 module.exports = (err, req, res, next) => {
@@ -46,6 +48,8 @@ module.exports = (err, req, res, next) => {
     error.message = err.message;
 
     if (err.name === "CastError") err = handleCastErrorDB(err);
+    if (err.stack.startsWith("ValidationError"))
+      err = handleValidationErrorJoi(err);
     sendErrorProd(err, req, res);
   }
 };
