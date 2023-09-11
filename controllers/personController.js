@@ -16,6 +16,7 @@ exports.createPerson = catchAsync(async (req, res, next) => {
 
   res.status(201).json({
     status: "success",
+    message: "Person created successfully",
     data: {
       person: newPerson,
     },
@@ -70,7 +71,7 @@ exports.deletePerson = catchAsync(async (req, res, next) => {
     );
   }
 
-  res.status(200).json({
+  res.status(204).json({
     status: "success",
     data: null,
   });

@@ -1,5 +1,6 @@
 const express = require("express");
 const morgan = require("morgan");
+const mongoSanitize = require("express-mongo-sanitize");
 
 const AppError = require("./utils/AppError");
 const globalErrorHandler = require("./controllers/errorController");
@@ -14,6 +15,8 @@ if (process.env.NODE_ENV === "development") {
 console.log(`ENVIROMENT: ${process.env.NODE_ENV}`);
 
 app.use(express.json({ limit: "10kb" }));
+
+app.use(mongoSanitize());
 
 app.use("/api", personRouter);
 
