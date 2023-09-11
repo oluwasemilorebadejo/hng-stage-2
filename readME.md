@@ -149,10 +149,6 @@ This command will start the API in development mode if you set `NODE_ENV=develop
   }
   ```
 
-  ```
-
-  ```
-
 - **Response (Error):**
   - HTTP Status Code: 404 Not Found if no person with the provided `id` exists.
   - HTTP Status Code: 400 Bad Request if the request body isn't a string.
