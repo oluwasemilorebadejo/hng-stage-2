@@ -31,7 +31,7 @@ The objective of this task is to build a simple REST API capable of performing C
 
 ## 1. UML Sequence Diagram <a name="sequence"></a>
 
-Follow this link to view the the sequence diagram: 
+Follow this link to view the the sequence diagram: https://github.com/oluwasemilorebadejo/hng-stage-2/blob/main/assets/uml-sequence-diagram.png
 
 ## 2. Prerequisites <a name="prerequisites"></a>
 
