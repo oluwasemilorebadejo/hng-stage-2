@@ -16,7 +16,6 @@ exports.createPerson = catchAsync(async (req, res, next) => {
 
   res.status(201).json({
     status: "success",
-    message: "Person created successfully",
     data: {
       person: newPerson,
     },
