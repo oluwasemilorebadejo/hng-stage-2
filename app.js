@@ -8,10 +8,9 @@ const personRouter = require("./routes/personRoutes");
 
 const app = express();
 
+app.use(morgan("dev"));
+
 // log env variable
-if (process.env.NODE_ENV === "development") {
-  app.use(morgan("dev"));
-}
 console.log(`ENVIROMENT: ${process.env.NODE_ENV}`);
 
 app.use(express.json({ limit: "10kb" }));

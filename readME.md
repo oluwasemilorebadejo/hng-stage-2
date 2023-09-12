@@ -133,7 +133,7 @@ This command will start the API in development mode if you set `NODE_ENV=develop
 ### Update a Person
 
 - **Endpoint:** `/api/:id`
-- **HTTP Method:** `PATCH`
+- **HTTP Method:** `PUT`
 - **Request Body:**
   ```json
   {
@@ -243,7 +243,7 @@ Content-Type: application/json
 **Request:**
 
 ```json
-PATCH /api/id
+PUT /api/id
 Content-Type: application/json
 
 {
